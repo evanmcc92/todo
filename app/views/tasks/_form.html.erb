@@ -1,0 +1,21 @@
+<%= form_for @task do |f| %>
+	<%= render 'shared/error_message'%>
+
+	<p><%= f.label :title %><br>
+	<%= f.text_field :title %></p>
+
+	<p><%= f.label :description %><br>
+	<%= f.text_field :description %></p>
+
+	<p><%= f.label :priority %><br>
+	<%= f.text_field :priority %></p>
+
+	<p><%= f.label :due %><br>
+	<%= f.text_field :due %></p>
+
+	<p><%= f.label :reminder %><br>
+	<%= f.text_field :reminder %></p>
+
+	<p><%= f.submit "Create The Task", class: "btn btn-primary" %></p>
+
+<% end %>

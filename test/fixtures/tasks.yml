@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  title: MyString
+  complete: false
+  description: MyString
+  reminder: 2014-01-29 09:45:47
+  due: 2014-01-29 09:45:47
+  priority: MyString
+
+two:
+  user_id: 
+  title: MyString
+  complete: false
+  description: MyString
+  reminder: 2014-01-29 09:45:47
+  due: 2014-01-29 09:45:47
+  priority: MyString
