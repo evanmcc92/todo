@@ -17,3 +17,7 @@
 #body {
 	margin: 0 10px;
 }
+.right {
+    text-align: right;
+    float: right;
+}
