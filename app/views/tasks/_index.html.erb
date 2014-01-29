@@ -31,7 +31,8 @@
 					</div>
 				</div>
 			</div>
-		<% elsif task.priority = "Medium" %>
+		<% end %>
+		<% if task.priority = "Medium" %>
 			<div class="panel panel-warning">
 				<div class="panel-heading">
 						<div class="panel-title">
@@ -62,7 +63,8 @@
 					</div>
 				</div>
 			</div>
-		<% elsif task.priority = "High" %>
+		<% end %>
+		<% if task.priority = "High" %>
 			<div class="panel panel-danger">
 				<div class="panel-heading">
 						<div class="panel-title">

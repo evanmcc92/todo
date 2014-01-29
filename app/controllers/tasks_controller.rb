@@ -35,7 +35,7 @@ class TasksController < ApplicationController
   def update
   	@task = Task.find(params[:id])
 
-  	if @task.update_attributes(task_params)
+  	if @task.update_attributes(update_task_params)
   		#if task saves
   		flash[:success] = "Task Updated"
   		redirect_to root_path
@@ -54,6 +54,11 @@ class TasksController < ApplicationController
 
   private
   	def task_params
+  		#strong params for task to save
+  		params.require(:task).permit(:title, :description, :priority, :due, :reminder)
+  	end
+  	
+  	def update_task_params
   		#strong params for task to save
   		params.require(:task).permit(:title, :description, :priority, :due, :reminder)
   	end

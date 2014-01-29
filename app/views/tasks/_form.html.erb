@@ -11,11 +11,16 @@
 	<%= f.select(:priority, [["Low"], ["Medium"],["High"]])  %></p>
 
 	<p><%= f.label :due %><br>
-	<%= f.text_field :due %></p>
+	<%= f.text_field :due, class: "datepicker" %></p>
 
 	<p><%= f.label :reminder %><br>
-	<%= f.text_field :reminder %></p>
+	<%= f.text_field :reminder, class: "datepicker" %></p>
 
 	<p><%= f.submit "Publish Task", class: "btn btn-primary" %></p>
 
 <% end %>
+<script>
+  $(function() {
+    $( ".datepicker" ).datepicker()
+  });
+</script>
