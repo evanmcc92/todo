@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
   def index
-  	@tasks = Task.all
+  	if current_user
+  		@tasks = current_user.tasks.all
+  	end
   end
 end

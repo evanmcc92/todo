@@ -46,12 +46,8 @@ class TasksController < ApplicationController
   	end
   end
 
-  def calendar
-    @tasks = Task.all
-  end
-
   def index
-  	@tasks = Task.all
+  	@tasks = current_user.tasks.all
   end
 
   private
