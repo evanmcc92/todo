@@ -1,7 +1,7 @@
 <% if @tasks %>
 	<% @tasks.each do |task| %>
-		<% if task.complete = false %>
-		<div class="panel panel-<%= task.priority %>">
+		<% if task.complete %>
+		<i><div class="panel panel-<%= task.priority %>">
 			<div class="panel-heading">
 					<div class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= task.id %>">
@@ -30,9 +30,8 @@
 					
 				</div>
 			</div>
-		</div>
+		</div></i>
 		<% else %>
-		<i>
 		<div class="panel panel-<%= task.priority %>">
 			<div class="panel-heading">
 					<div class="panel-title">
@@ -62,7 +61,7 @@
 					
 				</div>
 			</div>
-		</div></i>
+		</div>
 		<% end %>
 			
 	<% end %>
