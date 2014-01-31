@@ -44,8 +44,10 @@ class TasksController < ApplicationController
   		flash[:error] = "Task not Updated"
   		redirect_to :back
   	end
+  end
 
-
+  def calendar
+    @tasks = Task.all
   end
 
   def index

@@ -13,17 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require fullcalendar
 //= require bootstrap
 //= require_tree .
 
 
-$(document).ready(function() {
-
-    // page is now ready, initialize the calendar...
-
-    $('#fullcalendar').fullCalendar({
-        // put your options and callbacks here
-    })
-
-});

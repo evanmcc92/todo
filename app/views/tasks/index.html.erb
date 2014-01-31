@@ -1,9 +1,9 @@
-<h1>All Tasks</h1>
+
 
 <% if @tasks %>
-	<% for task in @tasks %>
-
-		<div class="panel panel-default">
+	<% @tasks.each do |task| %>
+		<% if task.complete = false %>
+		<div class="panel panel-<%= task.priority %>">
 			<div class="panel-heading">
 					<div class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= task.id %>">
@@ -15,7 +15,7 @@
 					
 					<div class="right">
 						<%= form_for task do |f| %>
-							Complete: <%= f.check_box :complete %>
+							<%= f.check_box :complete, {:class => 'checkable'} %>
 						<% end %>
 					</div>
 				</div>
@@ -27,12 +27,47 @@
 					<p>Due Date: <%= task.due %></p>
 					<p>Reminder Time: <%= task.reminder %></p>
 					<p>Complete: <%= task.complete ? 'Yes' : 'No' %></p>
-					<p><%= link_to '', task_path(task.id), method: :delete, data: { confirm: 'Are you sure you want to delete your account?' }, class: "btn btn-large glyphicon glyphicon-trash" %>
-					<%= link_to '', edit_task_path(task.id), class: "glyphicon glyphicon-pencil" %></p>
+					<p><%= link_to ' Delete', task_path(task), method: :delete, data: { confirm: 'Are you sure you want to delete your account?' }, class: "glyphicon glyphicon-trash" %> 
+					<%= link_to ' Edit', edit_task_path(task), class: "glyphicon glyphicon-pencil" %></p>
 					
 				</div>
 			</div>
 		</div>
-
+		<% else %>
+		<i>
+		<div class="panel panel-<%= task.priority %>">
+			<div class="panel-heading">
+					<div class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= task.id %>">
+						<%= task.title %>
+					</a>
+					<% if task.description || task.due || task.reminder %>
+						<span class="glyphicon glyphicon-pin"></span>
+					<% end %>
+					
+					<div class="right">
+						<%= form_for task do |f| %>
+							<%= f.check_box :complete, :onclick => "$('form').onsubmit();" %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+			<div id="collapse<%= task.id %>" class="panel-collapse collapse in">
+				<div class="panel-body">
+					<p>Description: <%= task.description %></p>
+					<p>Priority: <%= task.priority %></p>
+					<p>Due Date: <%= task.due %></p>
+					<p>Reminder Time: <%= task.reminder %></p>
+					<p>Complete: <%= task.complete ? 'Yes' : 'No' %></p>
+					<p><%= link_to ' Delete', task_path(task), method: :delete, data: { confirm: 'Are you sure you want to delete your account?' }, class: "glyphicon glyphicon-trash" %> 
+					<%= link_to ' Edit', edit_task_path(task), class: "glyphicon glyphicon-pencil" %></p>
+					
+				</div>
+			</div>
+		</div></i>
+		<% end %>
+			
 	<% end %>
+<% else %>
+	<p>Go Create a task to get started</p>
 <% end %>

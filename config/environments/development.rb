@@ -16,6 +16,19 @@ Todo::Application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+  :address => "mail.evanamccullough.com",
+  :port => 26,
+  :domain => "evanamccullough.com",
+  :user_name => "webmaster+evanamccullough.com",
+  :password => "evan6992",
+  :authentication => "plain",
+  :enable_starttls_auto => true
+  }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
