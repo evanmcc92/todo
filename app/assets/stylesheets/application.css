@@ -13,9 +13,7 @@
  *= require bootstrap-theme
  *= require_tree .
  */
-body {
-	background-color: #bec9c7;
-}
+
 #body {
 	margin: 0 10px;
 }
@@ -25,7 +23,7 @@ body {
 }
 .navbar-orange {
   background-color: #f3bc87;
-  border-color: #080808;
+  border-color: #892820;
 }
 
 .navbar-orange .navbar-brand {
@@ -72,7 +70,7 @@ body {
 
 .navbar-orange .navbar-toggle:hover,
 .navbar-orange .navbar-toggle:focus {
-  background-color: #333333;
+  background-color: #ea6c64;
 }
 
 .navbar-orange .navbar-toggle .icon-bar {
