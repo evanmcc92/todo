@@ -18,16 +18,16 @@ Todo::Application.configure do
 
 
 
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-  :address => "mail.evanamccullough.com",
-  :port => 26,
-  :domain => "evanamccullough.com",
-  :user_name => "webmaster+evanamccullough.com",
-  :password => "evan6992",
-  :authentication => "plain",
-  :enable_starttls_auto => true
-  }
+  # ActionMailer::Base.delivery_method = :smtp
+  # ActionMailer::Base.smtp_settings = {
+  # :address => "mail.evanamccullough.com",
+  # :port => 26,
+  # :domain => "evanamccullough.com",
+  # :user_name => "webmaster+evanamccullough.com",
+  # :password => "evan6992",
+  # :authentication => "plain",
+  # :enable_starttls_auto => true
+  # }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
