@@ -14,11 +14,24 @@
  *= require_tree .
  */
 
+
+#incompleted-tasks {
+  border-bottom: 2px solid #C0C0C0;
+}
+#completed-tasks {
+  font-style: italic;
+}
+
+
+
+
+
 #body {
 	margin: 0 10px;
 }
 .right {
     text-align: right;
+    margin-top: -5px;
     float: right;
 }
 .navbar-orange {

@@ -58,6 +58,6 @@ class TasksController < ApplicationController
   	
   	def update_task_params
   		#strong params for task to save
-  		params.require(:task).permit(:title, :description, :priority, :due, :reminder)
+  		params.require(:task).permit(:title, :description, :priority, :due, :reminder, :complete)
   	end
 end
