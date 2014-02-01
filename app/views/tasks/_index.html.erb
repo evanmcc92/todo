@@ -7,12 +7,9 @@
 				<div class="panel-heading">
 						<div class="panel-title">
 						<a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= task.id %>">
-							<%= task.title %>
+							<%= task.title %> <span class="glyphicon glyphicon-pushpin"></span>
 						</a>
-						<% if task.description || task.due || task.reminder %>
-							<span class="glyphicon glyphicon-pin"></span>
-						<% end %>
-						
+
 						<div class="right">
 							<%= form_for task do |f| %>
 								<%= f.hidden_field :complete, :value => true %>
@@ -21,7 +18,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="collapse<%= task.id %>" class="panel-collapse collapse in">
+				<div id="collapse<%= task.id %>" class="panel-collapse collapse">
 					<div class="panel-body">
 						<p>Description: <%= task.description %></p>
 						<p>Priority: <%= task.priority %></p>
@@ -60,7 +57,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="collapse<%= task.id %>" class="panel-collapse collapse in">
+				<div id="collapse<%= task.id %>" class="panel-collapse collapse">
 					<div class="panel-body">
 						<p>Description: <%= task.description %></p>
 						<p>Priority: <%= task.priority %></p>
