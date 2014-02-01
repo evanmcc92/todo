@@ -27,9 +27,8 @@
 						<p>Priority: <%= task.priority %></p>
 						<p>Due Date: <%= task.due %></p>
 						<p>Reminder Time: <%= task.reminder %></p>
-						<p>Complete: <%= task.complete ? 'Yes' : 'No' %></p>
-						<p><%= link_to ' Delete', task_path(task), method: :delete, data: { confirm: 'Are you sure you want to delete your account?' }, class: "glyphicon glyphicon-trash" %> 
-						<%= link_to ' Edit', edit_task_path(task), class: "glyphicon glyphicon-pencil" %></p>
+						<p><%= link_to '', task_path(task), method: :delete, data: { confirm: 'Are you sure you want to delete your account?' }, class: "glyphicon glyphicon-trash" %>&nbsp;
+						<%= link_to '', edit_task_path(task), class: "glyphicon glyphicon-edit" %></p>
 						
 					</div>
 				</div>
@@ -56,7 +55,7 @@
 						<div class="right">
 							<%= form_for task do |f| %>
 								<%= f.hidden_field :complete, :value => false %>
-								<%= f.submit "Complete", class: "btn btn-default btn-sm" %>
+								<%= f.submit "Incomplete", class: "btn btn-default btn-sm" %>
 							<% end %>
 						</div>
 					</div>
@@ -67,9 +66,8 @@
 						<p>Priority: <%= task.priority %></p>
 						<p>Due Date: <%= task.due %></p>
 						<p>Reminder Time: <%= task.reminder %></p>
-						<p>Complete: <%= task.complete ? 'Yes' : 'No' %></p>
-						<p><%= link_to ' Delete', task_path(task), method: :delete, data: { confirm: 'Are you sure you want to delete your account?' }, class: "glyphicon glyphicon-trash" %> 
-						<%= link_to ' Edit', edit_task_path(task), class: "glyphicon glyphicon-pencil" %></p>
+						<p><%= link_to '', task_path(task), method: :delete, data: { confirm: 'Are you sure you want to delete your account?' }, class: "glyphicon glyphicon-trash" %> &nbsp;
+						<%= link_to '', edit_task_path(task), class: "glyphicon glyphicon-edit" %></p>
 					</div>
 				</div>
 			</div>
