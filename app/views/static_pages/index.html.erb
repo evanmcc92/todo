@@ -1,13 +1,15 @@
+
 <% if current_user %>
-<% if current_user.sign_in_count == 1 %>
-<h3>Add to Home Screen Instructions</h3>
-<h4>If iPhone/iPad User</h4>
-<p>Be sure to add this app to your home screen using the Share Arrow at the bottom of Safari</p>
-<h4>If Android User</h4>
-<p>Be sure to add this app to your home screen by going to Chrome Start Menu and selecting "Add to home screen"</p>
-<% end -%>
+	<% if current_user.sign_in_count == 1 %>
+		<h3>Add to Home Screen Instructions</h3>
+		<h4>If iPhone/iPad User</h4>
+		<p>Be sure to add this app to your home screen using the Share Arrow at the bottom of Safari</p>
+		<h4>If Android User</h4>
+		<p>Be sure to add this app to your home screen by going to Chrome Start Menu and selecting "Add to home screen"</p>
+	<% end -%>
 <div class="row">
-  	<div class="col-md-4">	</div>
+  	<div class="col-md-4">
+<div id='calendar'></div></div>
   	<div class="col-md-8"><%= render 'tasks/index' %></div>
 </div>
 <% else %>
