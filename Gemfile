@@ -27,6 +27,8 @@ gem 'devise'
 
 gem 'fullcalendar-rails'
 
+gem 'newrelic_rpm'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
