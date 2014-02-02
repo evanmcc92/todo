@@ -34,6 +34,7 @@ $(document).ready(function() {
     events: [
       <% if @tasks %>
         <% @tasks.each do |task| %>
+          <% if task.complete == false %>
           <% if task.due %>
             {
               title  : "<%= task.title %>",
@@ -52,22 +53,11 @@ $(document).ready(function() {
               <%end %>
             },
           <% end %>
-        <% end %>
-      <% end %>
-    ],
-    eventClick: function(calEvent, jsEvent, view) {
-      <% if @tasks %>
-        <% @tasks.each do |task| %>
-          <% if task.due %>
-
-        alert('Event: ' + calEvent.title);
-        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-        alert('View: ' + view.name);
-
           <% end %>
         <% end %>
       <% end %>
-    }
+    ],
+    
   });
 });
 <% end %>

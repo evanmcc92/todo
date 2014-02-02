@@ -11,7 +11,7 @@
 	<%= f.select(:priority, [["Low"], ["Medium"],["High"]])  %></p>
 
 	<p><%= f.label :due %><br>
-	<%= f.text_field :due, class: "datepicker" %></p>
+	<%= f.text_field :due, :value => @task.due.strftime('%d/%m/%Y'), class: "datepicker" %></p>
 
 	<p><%= f.label :reminder %><br>
 	<%= f.text_field :reminder, :value => @task.reminder.try(:strftime,'%m/%d/%Y'), class: "datepicker" %></p>
@@ -21,6 +21,6 @@
 <% end %>
 <script>
   $(function() {
-    $( ".datepicker" ).datepicker()
+    $( ".datepicker" ).datepicker( {dateFormat: 'dd/mm/yy'})
   });
 </script>
