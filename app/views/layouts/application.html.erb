@@ -26,6 +26,52 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <!-- end meta info for iphone app image and such -->
 
+
+<%= javascript_tag do %>
+$(document).ready(function() {
+
+  $('#calendar').fullCalendar({
+    events: [
+      <% if @tasks %>
+        <% @tasks.each do |task| %>
+          <% if task.due %>
+            {
+              title  : "<%= task.title %>",
+              start  : "<%= task.due.strftime '%Y-%m-%dT%H:%M:%S' %>",
+              <% if task.priority == 'Low' %>
+                borderColor : "#bce8f1",
+                backgroundColor :"#d9edf7"
+              <%end %>
+              <% if task.priority == 'Medium' %>
+                borderColor : "#faebcc",
+                backgroundColor :"#fcf8e3"
+              <%end %>
+              <% if task.priority == 'High' %>
+                borderColor : "#ebccd1",
+                backgroundColor : "#f2dede"
+              <%end %>
+            },
+          <% end %>
+        <% end %>
+      <% end %>
+    ],
+    eventClick: function(calEvent, jsEvent, view) {
+      <% if @tasks %>
+        <% @tasks.each do |task| %>
+          <% if task.due %>
+
+        alert('Event: ' + calEvent.title);
+        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+        alert('View: ' + view.name);
+
+          <% end %>
+        <% end %>
+      <% end %>
+    }
+  });
+});
+<% end %>
+
 </head>
 <body>
 <%= render 'shared/header'%>

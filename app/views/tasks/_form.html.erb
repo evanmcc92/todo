@@ -14,7 +14,7 @@
 	<%= f.text_field :due, class: "datepicker" %></p>
 
 	<p><%= f.label :reminder %><br>
-	<%= f.text_field :reminder, class: "datepicker" %></p>
+	<%= f.text_field :reminder, :value => @task.reminder.try(:strftime,'%m/%d/%Y'), class: "datepicker" %></p>
 
 	<p><%= f.submit "Publish Task", class: "btn btn-primary" %></p>
 
