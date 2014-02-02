@@ -42,15 +42,13 @@ $(document).ready(function() {
               <% if task.priority == 'Low' %>
                 borderColor : "#bce8f1",
                 backgroundColor :"#d9edf7"
-              <%end %>
-              <% if task.priority == 'Medium' %>
+              <% elsif task.priority == 'Medium' %>
                 borderColor : "#faebcc",
                 backgroundColor :"#fcf8e3"
-              <%end %>
-              <% if task.priority == 'High' %>
+              <% else task.priority == 'High' %>
                 borderColor : "#ebccd1",
                 backgroundColor : "#f2dede"
-              <%end %>
+              <% end %>
             },
           <% end %>
           <% end %>
