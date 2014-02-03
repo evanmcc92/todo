@@ -1,5 +1,7 @@
 class ModelMailer < ActionMailer::Base
-  default from: "webmaster@evanamccullough.com"
+  default from: "Evan McCullough <webmaster@evanamccullough.com>",
+          return_path: 'webmaster@evanamccullough.com',
+          sender: 'webmaster@evanamccullough.com'
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
