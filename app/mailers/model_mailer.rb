@@ -6,11 +6,15 @@ class ModelMailer < ActionMailer::Base
   #
   #   en.model_mailer.new_record_notification.subject
   
-  def task_due(user)
-    mail(to: "#{user.email}", subject: "Something is due!")
+  def task_reminder(task)
+    @task = task
+
+    mail to: task.email, subject: task.title + " is Due!"
   end
 
-  def task_reminder(user)
-    mail(to: "#{user.email}", subject: "Reminder") 
+  def task_reminder(task)
+    @task = task
+
+    mail to: task.email, subject: task.title + " Reminder"
    end
 end
