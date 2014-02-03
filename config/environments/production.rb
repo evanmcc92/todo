@@ -45,6 +45,17 @@ Todo::Application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
+
+ ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+  :address => "mail.evanamccullough.com",
+  :port => 26,
+  :domain => "evanamccullough.com",
+  :user_name => "webmaster+evanamccullough.com",
+  :password => "evan6992",
+  :authentication => "plain",
+  :enable_starttls_auto => true
+  }
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
