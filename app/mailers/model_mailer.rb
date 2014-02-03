@@ -3,20 +3,18 @@ class ModelMailer < ActionMailer::Base
           return_path: 'webmaster@evanamccullough.com',
           sender: 'webmaster@evanamccullough.com'
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.model_mailer.new_record_notification.subject
   
-  def task_reminder(task)
+  def task_due(task)
     @task = task
+    @user = task.user
 
-    mail to: task.email, subject: task.title + " is Due!"
+    mail to: @user.email, subject: task.title + " is Due!"
   end
 
   def task_reminder(task)
     @task = task
+    @user = task.user
 
-    mail to: task.email, subject: task.title + " Reminder"
+    mail to: @user.email, subject: task.title + " Reminder"
    end
 end

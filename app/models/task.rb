@@ -7,15 +7,15 @@ class Task < ActiveRecord::Base
   def self.check_reminder
     current_date = Time.now.strftime("%d/%m/%Y %H:%M").to_s
     self.where(:reminder => current_date).each do |bet|
-      MddelMailer.task_reminder(task).deliver # later you can use some background job gem like sidekiq, rescue or delayed_job to send email, otherwise the performance might be a issue
-    end
-   end
+      MddelMailer.task_reminder(task).deliver
+  	end
+  end
 
-   def self.check_due
+  def self.check_due
     current_date = Time.now.strftime("%d/%m/%Y %H:%M").to_s
     self.where(:due => current_date).each do |bet|
-      MddelMailer.task_due(task).deliver # later you can use some background job gem like sidekiq, rescue or delayed_job to send email, otherwise the performance might be a issue
-    end
-   end 
+      MddelMailer.task_due(task).deliver 
+  	end
+  end 
 
 end

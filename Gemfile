@@ -27,8 +27,6 @@ gem 'devise'
 
 gem 'fullcalendar-rails'
 
-gem 'whenever', :require => false
-
 gem 'newrelic_rpm'
 
 # Use ActiveModel has_secure_password

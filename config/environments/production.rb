@@ -46,7 +46,10 @@ Todo::Application.configure do
   config.log_level = :info
 
 
- ActionMailer::Base.delivery_method = :smtp
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.smtp_settings = {
   :address => "mail.evanamccullough.com",
   :port => 26,
