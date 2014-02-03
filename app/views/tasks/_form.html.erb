@@ -11,13 +11,11 @@
 	<%= f.select(:priority, [["Low"], ["Medium"],["High"]])  %></p>
 
 	<p><%= f.label :due %><br>
-	<%= f.text_field :due, :value => @task.due.try(:strftime, '%d/%m/%Y'), class: "datepicker" %></p>
+	<%= f.text_field :due, :value => @task.due.try(:strftime, '%d/%m/%Y %H:%M'), class: "datepicker" %></p>
 
 	<p><%= f.submit "Publish Task", class: "btn btn-primary" %></p>
 
 <% end %>
 <script>
-  $(function() {
-    $( ".datepicker" ).datepicker( {dateFormat: 'dd/mm/yy'})
-  });
+		$( ".datepicker" ).datetimepicker();
 </script>

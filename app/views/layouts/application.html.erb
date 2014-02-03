@@ -25,6 +25,11 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <!-- end meta info for iphone app image and such -->
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script src="https://rawgithub.com/trentrichardson/jQuery-Timepicker-Addon/master/dist/jquery-ui-timepicker-addon.js"></script>
+<script src="https://rawgithub.com/trentrichardson/jQuery-Timepicker-Addon/master/dist/jquery-ui-sliderAccess.js"></script>
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/smoothness/jquery-ui.css" type="text/css" media="all" />
+<link rel="stylesheet" href="https://rawgithub.com/trentrichardson/jQuery-Timepicker-Addon/master/dist/jquery-ui-timepicker-addon.css" type="text/css" />
 
 
 <%= javascript_tag do %>
@@ -38,7 +43,7 @@ $(document).ready(function() {
           <% if task.due %>
             {
               title  : "<%= task.title %>",
-              start  : "<%= task.due.strftime '%Y-%m-%dT%H:%M:%S' %>",
+              start  : "<%= task.due.strftime '%d/%m/%Y %H:%M:%S' %>",
               <% if task.priority == 'Low' %>
                 borderColor : "#bce8f1",
                 backgroundColor :"#d9edf7"
