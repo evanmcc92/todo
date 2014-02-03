@@ -13,9 +13,12 @@
 	<p><%= f.label :due %><br>
 	<%= f.text_field :due, :value => @task.due.try(:strftime, '%d/%m/%Y %H:%M'), class: "datepicker" %></p>
 
+	<p><%= f.label :reminder %><br>
+	<%= f.text_field :reminder, :value => @task.reminder.try(:strftime, '%d/%m/%Y %H:%M'), class: "datepicker" %></p>
+
 	<p><%= f.submit "Publish Task", class: "btn btn-primary" %></p>
 
 <% end %>
 <script>
-		$( ".datepicker" ).datetimepicker();
+	$( ".datepicker" ).datetimepicker();
 </script>
