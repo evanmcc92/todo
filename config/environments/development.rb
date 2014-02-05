@@ -13,19 +13,16 @@ Todo::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
 
 
 
-  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.smtp_settings = {
   :address => "mail.evanamccullough.com",
   :port => 26,
-  :domain => "evanamccullough.com",
+  :domain => "0.0.0.0:3000",
   :user_name => "webmaster+evanamccullough.com",
   :password => "evan6992",
   :authentication => "plain",
@@ -44,5 +41,5 @@ Todo::Application.configure do
   config.assets.debug = true
 
   #for devise
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => '0.0.0.0:3000' }
 end

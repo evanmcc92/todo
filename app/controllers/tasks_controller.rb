@@ -5,6 +5,7 @@ class TasksController < ApplicationController
 
   	if @task.save
   		#if task saves
+      ModelMailer.new_task(@task).deliver
   		flash[:success] = "Task Created"
   		redirect_to root_path
   	else
