@@ -84,11 +84,11 @@ Todo::Application.configure do
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.smtp_settings = {
-  :address => ENV["smtp.mailgun.org"],
-  :port => ENV['587'],
+  :address => "smtp.mailgun.org",
+  :port => 587,
   :domain => "to-do-em.herokuapp.com",
-  :user_name => ENV["postmaster@evanamccullough.com"],
-  :password => ENV["evan6992"],
+  :user_name => "postmaster@evanamccullough.com",
+  :password => "evan6992",
   :authentication => "plain",
   }
 end
