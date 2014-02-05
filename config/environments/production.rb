@@ -86,7 +86,7 @@ Todo::Application.configure do
   ActionMailer::Base.smtp_settings = {
   :address => "mail.evanamccullough.com",
   :port => 26,
-  :domain => "to-do-em.herokuapps.com",
+  :domain => "evanamccullough.com",
   :user_name => "webmaster+evanamccullough.com",
   :password => "evan6992",
   :authentication => "plain",

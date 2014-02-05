@@ -1,5 +1,5 @@
 class ModelMailer < ActionMailer::Base
-  default from: "Evan McCullough <webmaster@evanamccullough.com>"
+  default from: "webmaster@evanamccullough.com"
 
   
   def task_due(task)
