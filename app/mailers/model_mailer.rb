@@ -1,5 +1,5 @@
 class ModelMailer < ActionMailer::Base
-  default from: "postmaster@evanamccullough.com"
+  default from: "Evan McCullough <postmaster@evanamccullough.com>"
 
   
   def task_due(task)
@@ -14,10 +14,5 @@ class ModelMailer < ActionMailer::Base
     @user = @task.user
 
     mail to: @user.email, subject: @task.title + " Reminder"
-  end
-
-  def new_task(task)
-    @task = task
-    mail(:to => @task.user.email, :subject => @task.title + " Is Registered")
   end
 end
