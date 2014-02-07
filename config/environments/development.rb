@@ -22,13 +22,12 @@ Todo::Application.configure do
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.raise_delivery_errors = true
   ActionMailer::Base.smtp_settings = {
-  :address => "mail.evanamccullough.com",
-  :port => 26,
-  :domain => "evanamccullough.com",
-  :user_name => "webmaster+evanamccullough.com",
+  :address => "smtp.mailgun.org",
+  :port => 587,
+  :domain => "localhost:3000",
+  :user_name => "postmaster@evanamccullough.com",
   :password => "evan6992",
   :authentication => "plain",
-  :enable_starttls_auto => true
   }
 
   # Print deprecation notices to the Rails logger.
