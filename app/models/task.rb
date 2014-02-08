@@ -6,16 +6,16 @@ class Task < ActiveRecord::Base
 
   def self.check_reminder
     current_date = Time.now.strftime("%d/%m/%Y %H:%M").to_s
-    where self.(:reminder == current_date).each do |task|
+    self.where(:reminder => current_date).each do |task|
       ModelMailer.task_reminder(task).deliver
   	end
   end
 
   def self.check_due
     current_date = Time.now.strftime("%d/%m/%Y %H:%M").to_s
-    where self.(:due == current_date).each do |task|
-      ModelMailer.task_due(task).deliver 
-  	end
+    self.where(:due => current_date).each do |task|
+      ModelMailer.task_due(task).deliver
+    end
   end 
 
 end
