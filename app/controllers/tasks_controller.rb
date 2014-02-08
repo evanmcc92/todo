@@ -4,7 +4,6 @@ class TasksController < ApplicationController
   	@task = current_user.tasks.create(task_params)
 
   	if @task.save
-      ModelMailer.task_reminder(@task).deliver
   		#if task saves
   		flash[:success] = "Task Created"
   		redirect_to root_path
