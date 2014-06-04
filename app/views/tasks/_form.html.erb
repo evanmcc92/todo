@@ -1,3 +1,4 @@
+<p>*Due Date and Reminder Dates are currently unavailable*</p>
 <%= form_for @task do |f| %>
 	<%= render 'shared/error_message'%>
 
@@ -11,10 +12,10 @@
 	<%= f.select(:priority, [["Low"], ["Medium"],["High"]])  %></p>
 
 	<p><%= f.label :due %><br>
-	<%= f.text_field :due, :value => @task.due.try(:strftime, '%d/%m/%Y %H:%M'), class: "datepicker" %></p>
+	<%= f.text_field :due, :value => @task.due.try(:strftime, '%d/%m/%Y %H:%M'), class: "datepicker", :disabled => true %></p>
 
 	<p><%= f.label :reminder %><br>
-	<%= f.text_field :reminder, :value => @task.reminder.try(:strftime, '%d/%m/%Y %H:%M'), class: "datepicker" %></p>
+	<%= f.text_field :reminder, :value => @task.reminder.try(:strftime, '%d/%m/%Y %H:%M'), class: "datepicker", :disabled => true %></p>
 
 	<p><%= f.submit "Publish Task", class: "btn btn-primary" %></p>
 
