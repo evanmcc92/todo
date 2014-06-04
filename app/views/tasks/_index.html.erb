@@ -25,6 +25,9 @@
 						<% if task.due %><p>Due Date: <%= task.due.strftime '%m/%d/%Y %I:%M' %></p><% end %>
 						<% if task.reminder %><p>Reminder Time: <%= task.reminder.strftime '%m/%d/%Y %I:%M' %></p><% end %>
 						<p><%= link_to '', task_path(task), method: :delete, data: { confirm: 'Are you sure you want to delete your account?' }, class: "glyphicon glyphicon-trash" %>&nbsp;
+						<% if task.due %><p>Due Date: <%= task.due.strftime '%d/%m/%Y %H:%M' %></p><% end %>
+						<% if task.reminder %><p>Reminder Time: <%= task.reminder.strftime '%d/%m/%Y %H:%M' %></p><% end %>
+						<p><%= link_to '', task_path(task), method: :delete, data: { confirm: 'Are you sure you want to delete this task?' }, class: "glyphicon glyphicon-trash" %>&nbsp;
 						<%= link_to '', edit_task_path(task), class: "glyphicon glyphicon-edit" %></p>
 						
 					</div>
@@ -61,6 +64,9 @@
 						<% if task.due %><p>Due Date: <%= task.due.strftime '%m/%d/%Y %I:%M' %></p><% end %>
 						<% if task.reminder %><p>Reminder Time: <%= task.reminder.strftime '%m/%d/%Y %I:%M' %></p><% end %>
 						<p><%= link_to '', task_path(task), method: :delete, data: { confirm: 'Are you sure you want to delete your account?' }, class: "glyphicon glyphicon-trash" %> &nbsp;
+						<% if task.due %><p>Due Date: <%= task.due.strftime '%d/%m/%Y %H:%M' %></p><% end %>
+						<% if task.reminder %><p>Reminder Time: <%= task.reminder.strftime '%d/%m/%Y %H:%M' %></p><% end %>
+						<p><%= link_to '', task_path(task), method: :delete, data: { confirm: 'Are you sure you want to delete this task?' }, class: "glyphicon glyphicon-trash" %> &nbsp;s
 						<%= link_to '', edit_task_path(task), class: "glyphicon glyphicon-edit" %></p>
 					</div>
 				</div>
