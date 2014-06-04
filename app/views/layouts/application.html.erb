@@ -26,10 +26,10 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <!-- end meta info for iphone app image and such -->
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-<script src="https://rawgithub.com/trentrichardson/jQuery-Timepicker-Addon/master/dist/jquery-ui-timepicker-addon.js"></script>
-<script src="https://rawgithub.com/trentrichardson/jQuery-Timepicker-Addon/master/dist/jquery-ui-sliderAccess.js"></script>
+<script src="//rawgithub.com/trentrichardson/jQuery-Timepicker-Addon/master/dist/jquery-ui-timepicker-addon.js"></script>
+<script src="//rawgithub.com/trentrichardson/jQuery-Timepicker-Addon/master/dist/jquery-ui-sliderAccess.js"></script>
 <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/smoothness/jquery-ui.css" type="text/css" media="all" />
-<link rel="stylesheet" href="https://rawgithub.com/trentrichardson/jQuery-Timepicker-Addon/master/dist/jquery-ui-timepicker-addon.css" type="text/css" />
+<link rel="stylesheet" href="//rawgithub.com/trentrichardson/jQuery-Timepicker-Addon/master/dist/jquery-ui-timepicker-addon.css" type="text/css" />
 
 
 <%= javascript_tag do %>
@@ -61,6 +61,10 @@ $(document).ready(function() {
       <% end %>
     ],
     
+  });
+  $("#togglecalendar").click(function(){
+    $(".col-md-4").toggle();
+    ($("#togglecalendar").text() === "Hide Calendar") ? $("#togglecalendar").text("Show Calendar") : $("#togglecalendar").text("Hide Calendar");
   });
 });
 <% end %>

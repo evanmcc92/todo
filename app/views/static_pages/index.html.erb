@@ -10,10 +10,14 @@
 		<h4>If Android User</h4>
 		<p>Be sure to add this app to your home screen by going to Chrome Start Menu and selecting "Add to home screen"</p>
 	<% end -%>
+<button id="togglecalendar">Hide Calendar</button>
 <div class="row">
   	<div class="col-md-4">
-<div id='calendar'></div></div>
-  	<div class="col-md-8"><%= render 'tasks/index' %></div>
+		<div id='calendar'></div>
+	</div>
+  	<div class="col-md-8">
+  		<%= render 'tasks/index' %>
+  	</div>
 </div>
 <% else %>
 	<%= render 'static_pages/index' %>
