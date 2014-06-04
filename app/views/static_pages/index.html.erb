@@ -12,9 +12,21 @@
 	<% end -%>
 <div class="row">
   	<div class="col-md-4">
-<div id='calendar'></div></div>
-  	<div class="col-md-8"><%= render 'tasks/index' %></div>
+  		<button id="togglecalendar">Hide Calendar</button>
+		<div id='calendar'></div>
+	</div>
+  	<div class="col-md-8">
+  		<%= render 'tasks/index' %>
+  	</div>
 </div>
+<script>
+$(document).ready(function{
+	$("#togglecalendar").click(function(){
+		$("#calendar").toggle();
+		($("#togglecalendar").text() === "Hide Calendar") ? $("#togglecalendar").text("Show Calendar") : $("#togglecalendar").text("Hide Calendar");
+	});
+});
+</script>
 <% else %>
 	<%= render 'static_pages/index' %>
 <% end %>
