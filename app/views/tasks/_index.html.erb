@@ -7,7 +7,7 @@
 				<div class="panel-heading">
 						<div class="panel-title">
 						<a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= task.id %>">
-							<%= task.title %> <span class="glyphicon glyphicon-pushpin"></span>
+							<%= task.title %> <% if task.description != "" %><span class="glyphicon glyphicon-pushpin"></span><% end %>
 						</a>
 
 						<div class="right">
@@ -43,7 +43,7 @@
 				<div class="panel-heading">
 						<div class="panel-title">
 						<a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= task.id %>">
-							<%= task.title %> <span class="glyphicon glyphicon-pushpin"></span>
+							<%= task.title %> <% if task.description %><span class="glyphicon glyphicon-pushpin"></span><% end %>
 						</a>
 						
 						<div class="right">
