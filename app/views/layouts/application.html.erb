@@ -64,7 +64,13 @@ $(document).ready(function() {
   });
   $("#togglecalendar").click(function(){
     $(".col-md-4").toggle();
-    ($("#togglecalendar").text() === "Hide Calendar") ? $("#togglecalendar").text("Show Calendar") : $("#togglecalendar").text("Hide Calendar");
+    if($("#togglecalendar").text() === "Hide Calendar") {
+      $("#togglecalendar").text("Show Calendar");
+      $("#tasks-all").removeClass("col-md-8").addClass("col-md-12");
+    } else{
+      $("#togglecalendar").text("Hide Calendar"); 
+      $("#tasks-all").removeClass("col-md-12").addClass("col-md-8");
+    }
   });
 });
 <% end %>
